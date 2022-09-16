@@ -33,8 +33,9 @@ local render = function(f)
 
   -- _inspect(f)
 
+  -- vim icon
   f.add { '  ', fg = msg_area_color, bg = tokyo_gray_color }
-  f.add ' '
+
   f.make_tabs(function(info)
     -- get icon color assosiated with filetype (using nvim-web-devicons)
     local icon_color = f.icon_color(info.filename)
