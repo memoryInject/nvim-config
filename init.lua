@@ -15,4 +15,4 @@ require "user.tabline-framework"
 require "user.lualine"
 require "user.mundo"
 
--- NOTE: make sure the order { persisted, nvim-tree } to work all this together
+-- NOTE: make sure the order { persisted, nvim-tree } to work together
