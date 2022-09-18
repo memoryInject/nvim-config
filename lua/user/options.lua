@@ -41,6 +41,7 @@ vim.opt.shortmess:append "c"
 
 -- For WSL use win32yank.exe for clipboard
 -- https://stackoverflow.com/questions/68448000/error-running-win32yank-in-neovim-invalid-value-for-argument-cmd-win32yank-exe
+-- https://www.reddit.com/r/neovim/comments/g94zrl/solution_neovim_clipboard_with_wsl/
 local function is_wsl()
   local version_file = io.open("/proc/version", "rb")
   if version_file ~= nil and string.find(version_file:read("*a"), "microsoft") then
@@ -58,10 +59,10 @@ if is_wsl() then
            ["*"] = "win32yank.exe -i --crlf"
       },
       paste = {
-          ["+"] = "win32yank.exe -o --lf",
-          ["*"] = "win32yank.exe -o --lf"
+          ["+"] = 'win32yank.exe -o --lf',
+          ["*"] = 'win32yank.exe -o --lf'
       },
-      cache_enabled = false
+      cache_enabled = true
   }
 end
 
