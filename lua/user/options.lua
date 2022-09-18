@@ -38,6 +38,33 @@ vim.opt.belloff = "all"
 
 vim.opt.shortmess:append "c"
 
+
+-- For WSL use win32yank.exe for clipboard
+-- https://stackoverflow.com/questions/68448000/error-running-win32yank-in-neovim-invalid-value-for-argument-cmd-win32yank-exe
+local function is_wsl()
+  local version_file = io.open("/proc/version", "rb")
+  if version_file ~= nil and string.find(version_file:read("*a"), "microsoft") then
+    version_file:close()
+    return true
+  end
+  return false
+end
+
+if is_wsl() then
+  vim.g.clipboard = {
+      name = "win32yank-wsl",
+      copy = {
+           ["+"] = "win32yank.exe -i --crlf",
+           ["*"] = "win32yank.exe -i --crlf"
+      },
+      paste = {
+          ["+"] = "win32yank.exe -o --lf",
+          ["*"] = "win32yank.exe -o --lf"
+      },
+      cache_enabled = false
+  }
+end
+
 vim.cmd "set whichwrap+=<,>,[,],h,l"
 vim.cmd [[set iskeyword+=-]]
 vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work

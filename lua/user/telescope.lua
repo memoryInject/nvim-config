@@ -9,6 +9,13 @@ local actions = require "telescope.actions"
 
 telescope.setup {
   defaults = {
+    file_ignore_patterns = {
+      "node_modules",
+      "___pycache__",
+      ".git",
+      "venv",
+      "env"
+    },
 
     prompt_prefix = " ",
     selection_caret = " ",
@@ -95,7 +102,7 @@ telescope.setup {
     -- }
     -- please take a look at the readme of the extension you want to configure
     tele_tabby = {
-        use_highlighter = true,
+      use_highlighter = true,
     }
   },
 }
