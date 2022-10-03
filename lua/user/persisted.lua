@@ -36,6 +36,9 @@ persisted.setup({
   before_save = before_save, -- function to run before the session is saved to disk
   after_save = nil, -- function to run after the session is saved to disk
   after_source = function()
+    -- Show Gitsigns after a session loaded
+    vim.cmd[[:Gitsigns reset_buffer]]
+    vim.cmd[[:Gitsigns setup]]
     -- vim.cmd[[:qa!]]
   end, -- function to run after the session is sourced
   telescope = { -- options for the telescope extension

@@ -46,3 +46,10 @@ gitsigns.setup {
     enable = false,
   },
 }
+
+-- Remove gitsign background for color scheme solarized
+vim.cmd[[
+  :hi GitSignsDelete guibg=none
+  :hi GitSignsChange guibg=none
+  :hi GitSignsAdd guibg=none
+]]

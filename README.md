@@ -34,7 +34,7 @@ tsserver
 ### Requirements for null-ls
 This config require to install `prettier` and `eslint` globally for null-ls diagonstics and formatting
 ```bash
-npm i -g prettier eslint_d 
+npm i -g prettier eslint
 ```
 
 ### Requirements for Telescope
@@ -52,6 +52,4 @@ sudo dpkg -i fd_8.4.0_amd64.deb
 ```
 
 ### Requirements for WSL
-Setup win32yank.exe for system clipboard support: https://github.com/equalsraf/win32yank
-
-After download win32yank.exe make sure it's available on `$PATH`.
+Setup wsl-clipboard for system clipboard support: https://github.com/memoryInject/wsl-clipboard

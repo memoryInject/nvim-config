@@ -1,4 +1,5 @@
  require "user.options"
+ require "user.wsl-clipboard"
  require "user.keymaps"
  require "user.plugins"
  require "user.colorscheme"
@@ -11,8 +12,8 @@
  require "user.gitsigns"
  require "user.persisted"
  require "user.nvim-tree"
- require "user.tabline-framework"
  require "user.lualine"
+ require "user.tabline-framework"
  require "user.mundo"
 
--- NOTE: make sure the order { persisted, nvim-tree } to work together
+-- NOTE: make sure the order { persisted, nvim-tree, lualine, tabline-framework } to work together

@@ -1,7 +1,7 @@
 -- :help options
 --vim.opt.backup = false                          -- creates a backup file
 vim.opt.clipboard = "unnamedplus"               -- allows neovim to access the system clipboard
-vim.opt.cmdheight = 2                           -- more space in the neovim command line for displaying messages
+vim.opt.cmdheight = 1                           -- more space in the neovim command line for displaying messages
 vim.opt.completeopt = { "menuone", "noselect" } -- mostly just for cmp
 vim.opt.conceallevel = 0                        -- so that `` is visible in markdown files
 vim.opt.fileencoding = "utf-8"                  -- the encoding written to a file
@@ -34,37 +34,9 @@ vim.opt.scrolloff = 8                           -- is one of my fav
 vim.opt.sidescrolloff = 8
 vim.opt.guifont = "monospace:h17"               -- the font used in graphical neovim applications
 vim.opt.cc = "80"                               -- set an 80 column border for good coding style
-vim.opt.belloff = "all"
+vim.opt.belloff = "all"                         -- stop all the sounds
 
 vim.opt.shortmess:append "c"
-
-
--- For WSL use win32yank.exe for clipboard
--- https://stackoverflow.com/questions/68448000/error-running-win32yank-in-neovim-invalid-value-for-argument-cmd-win32yank-exe
--- https://www.reddit.com/r/neovim/comments/g94zrl/solution_neovim_clipboard_with_wsl/
-local function is_wsl()
-  local version_file = io.open("/proc/version", "rb")
-  if version_file ~= nil and string.find(version_file:read("*a"), "microsoft") then
-    version_file:close()
-    return true
-  end
-  return false
-end
-
-if is_wsl() then
-  vim.g.clipboard = {
-      name = "win32yank-wsl",
-      copy = {
-           ["+"] = "win32yank.exe -i --crlf",
-           ["*"] = "win32yank.exe -i --crlf"
-      },
-      paste = {
-          ["+"] = 'win32yank.exe -o --lf',
-          ["*"] = 'win32yank.exe -o --lf'
-      },
-      cache_enabled = true
-  }
-end
 
 vim.cmd "set whichwrap+=<,>,[,],h,l"
 vim.cmd [[set iskeyword+=-]]
