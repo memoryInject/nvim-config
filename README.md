@@ -31,6 +31,27 @@ tsserver
 
 ## Additional requirements
 
+### Requirements for DAP
+This config require custom configuration for DAP debug adapters.    
+In this config I setup all my dap adapters to `~/.local/share/nvim/dap_adapters` location.  
+
+#### JavaScript/TypeScript vscode-js-debug:   
+  - Make sure to install `ts-node` globally for TypeScript debug: `npm i -g ts-node`   
+
+#### Python debugpy setup:  
+  - https://github.com/mfussenegger/nvim-dap-python#debugpy  
+  - Python virtual environment with debugpy path in this config: `~/.local/share/nvim/dap_adapters/debugpy/bin/python`
+
+#### C/C++ cpptools setup:  
+  - https://github.com/mfussenegger/nvim-dap/wiki/C-C---Rust-(gdb-via--vscode-cpptools)
+  - Make sure to install `gcc and gdb`.  
+  - cpptools path in this config: `~/.local/share/nvim/dap_adapters/cpptools/extension/debugAdapters/bin/OpenDebugAD7`  
+  - Also make sure `OpenDebugAD7` is executable: 
+  ```bash 
+  chmod +x ~/.local/share/nvim/dap_adapters/cpptools/extension/debugAdapters/bin/OpenDebugAD7
+  ```   
+  - Example to compile with gcc for debug: `gcc -g -o main main.c`  
+
 ### Requirements for null-ls
 This config require to install `prettier` and `eslint` globally for null-ls diagonstics and formatting
 ```bash

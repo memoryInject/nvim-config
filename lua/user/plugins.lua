@@ -77,6 +77,17 @@ return packer.startup(function(use)
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
 
+  -- DAP
+  use "mfussenegger/nvim-dap" -- enable DAP client
+  use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} } -- UI for dap
+  use "mfussenegger/nvim-dap-python" -- debug python (make sure pip install debugpy with virtual environment)
+  use { "mxsdev/nvim-dap-vscode-js", requires = {"mfussenegger/nvim-dap"} } -- debug javascript client
+  use {
+    "microsoft/vscode-js-debug",
+    opt = true,
+    run = "npm install --legacy-peer-deps && npm run compile"
+  } -- javascript debugger
+
   -- Telescope
   use "nvim-telescope/telescope.nvim"
   use "TC72/telescope-tele-tabby.nvim" -- tab switcher extension for Telescope
