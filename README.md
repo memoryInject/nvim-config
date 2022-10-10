@@ -1,10 +1,10 @@
 # nvim-config
 
-A Neovim lua based config. **Important:** This is still an early conversion from my vimscript
-to lua based config, there may be some breaking changes with some of the plugin used in this 
-config. 
+A Neovim lua based config.   
 
-Only test with NVIM v0.8.0
+**Important:** This is still an early conversion from my vimscript to lua based config, there may be some breaking changes with some of the plugin used in this config. 
+
+Only test with NVIM v0.8.0 on Linux Ubuntu 20.04.5 LTS and WSL Ubuntu 20.04.2 LTS on Windows 10 x86_64.
 
 
 ## Installation
@@ -15,48 +15,35 @@ Clone this repo
 git clone https://github.com/memoryInject/nvim-config.git ~/.config/nvim
 ```
 
-When lauch first time Neovim after this config it will install the plugin manager and 
-all the plugins automatically.
+When lauch Neovim for the first time with this config, it will install the plugin manager and all the plugins, LSP, DAP, Linters, Formatters automatically. Ignore any warnings during the first setup (sometimes Treesitter will show some errors and warnings).
 
-### LSP used in my setup
+### LSP, DAP, Linter, Formatter used in this config
+
+This config come with preconfigured LSP, DAP, Linters and Formatters for JavaScript, TypeScrpt, Python, Lua and C/C++ (these are the main languages I use usually).   
+Run this command in Neovim to show all the  preconfigured LSP, DAP, Linters and Formatters.
 ```vimscript
-:LspInstallInfo
+:Mason
+```
 
-html
-jsonls
-pyright
-sumneko_lua
-tsserver
+**Optional:**  add mason bin path to ~/.zshrc to access all the LSP, DAP, Linters and Formatters outside Neovim
+```bash
+echo 'export PATH="/home/$USER/.local/share/nvim/mason/bin:$PATH"' >> ~/.zshrc
 ```
 
 ## Additional requirements
+### Requirements for Python  
+Install pynvim: `pip3 install pynvim`    
+**Note:** `pynvim` is required for [vim-mundo](https://github.com/simnalamburt/vim-mundo/) plugin. 
 
 ### Requirements for DAP
-This config require custom configuration for DAP debug adapters.    
-In this config I setup all my dap adapters to `~/.local/share/nvim/dap_adapters` location.  
+This config require custom configuration for DAP debug adapters.     
 
 #### JavaScript/TypeScript vscode-js-debug:   
   - Make sure to install `ts-node` globally for TypeScript debug: `npm i -g ts-node`   
 
-#### Python debugpy setup:  
-  - https://github.com/mfussenegger/nvim-dap-python#debugpy  
-  - Python virtual environment with debugpy path in this config: `~/.local/share/nvim/dap_adapters/debugpy/bin/python`
-
 #### C/C++ cpptools setup:  
-  - https://github.com/mfussenegger/nvim-dap/wiki/C-C---Rust-(gdb-via--vscode-cpptools)
-  - Make sure to install `gcc and gdb`.  
-  - cpptools path in this config: `~/.local/share/nvim/dap_adapters/cpptools/extension/debugAdapters/bin/OpenDebugAD7`  
-  - Also make sure `OpenDebugAD7` is executable: 
-  ```bash 
-  chmod +x ~/.local/share/nvim/dap_adapters/cpptools/extension/debugAdapters/bin/OpenDebugAD7
-  ```   
+  - Make sure to install `gcc and gdb`.
   - Example to compile with gcc for debug: `gcc -g -o main main.c`  
-
-### Requirements for null-ls
-This config require to install `prettier` and `eslint` globally for null-ls diagonstics and formatting
-```bash
-npm i -g prettier eslint
-```
 
 ### Requirements for Telescope
 

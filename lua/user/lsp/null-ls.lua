@@ -8,15 +8,19 @@ local formatting = null_ls.builtins.formatting
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
 local diagnostics = null_ls.builtins.diagnostics
 
-null_ls.setup {
+null_ls.setup({
   debug = false,
   sources = {
-    formatting.prettier.with { extra_args = { "--config-precedence", "prefer-file", "--single-quote", "--jsx-single-quote" } },
-    diagnostics.eslint
-    --[[ formatting.prettier, ]]
-    --[[ formatting.black.with { extra_args = { "--fast" } }, ]]
-    -- formatting.yapf,
-    --[[ formatting.stylua, ]]
-    --[[ diagnostics.flake8, ]]
+    formatting.prettier.with({
+      extra_args = { "--config-precedence", "prefer-file", "--single-quote", "--jsx-single-quote" },
+    }),
+    diagnostics.eslint_d,
+    formatting.black.with({ extra_args = { "--fast" } }),
+    diagnostics.flake8,
+    formatting.stylua,
+    formatting.clang_format.with({
+      extra_args = { "-style", "file" },
+    }),
+    diagnostics.cpplint,
   },
-}
+})

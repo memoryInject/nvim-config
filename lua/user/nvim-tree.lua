@@ -39,11 +39,11 @@ nvim_tree.setup {
       quit_on_open = true,
     },
   },
-  -- renderer = {
-  --   icons = {
-  --     glyphs = nvim_tree_icons
-  --   }
-  -- },
+  renderer = {
+    icons = {
+      glyphs = nvim_tree_icons
+    }
+  },
   disable_netrw = true,
   hijack_netrw = true,
   open_on_setup = false,

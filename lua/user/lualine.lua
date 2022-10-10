@@ -14,7 +14,10 @@ lualine.setup {
       statusline = {},
       winbar = {},
     },
-    ignore_focus = {},
+    ignore_focus = {
+      'dap-repl', 'dapui_scopes', 'dapui_breakpoints',
+      'dapui_stacks', 'dapui_watches', 'dapui_console'
+    },
     always_divide_middle = true,
     globalstatus = false,
     refresh = {

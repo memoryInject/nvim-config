@@ -20,7 +20,7 @@ theme.setup({
     comments = "italic", -- `:help attr-list` [ italic, NONE, bold .. ] 
     keywords = "NONE",
   },
-  sidebars = {"Mundo", "MundoDiff"} -- Other sidebars
+  sidebars = {"Mundo", "MundoDiff", "dap*" } -- Other sidebars
 })
 
 vim.cmd[[colorscheme tokyonight]]

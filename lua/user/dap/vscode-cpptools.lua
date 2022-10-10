@@ -3,11 +3,12 @@ if not status_ok then
   return
 end
 
+-- using Mason to install cpptools DAP
 
 dap.adapters.cppdbg = {
   id = "cppdbg",
   type = "executable",
-  command = os.getenv("HOME") .. "/.local/share/nvim/dap_adapters/cpptools/extension/debugAdapters/bin/OpenDebugAD7",
+  command = "OpenDebugAD7"
 }
 
 dap.configurations.cpp = {
