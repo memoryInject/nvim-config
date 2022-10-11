@@ -54,6 +54,7 @@ return packer.startup(function(use)
     requires = { "kyazdani42/nvim-web-devicons", opt = true },
   })
   use("simnalamburt/vim-mundo") -- The undo history visualizer for VIM require pynvim
+  use("norcalli/nvim-colorizer.lua") -- show color on css files 
 
   -- Colorscheme
   use("folke/tokyonight.nvim")

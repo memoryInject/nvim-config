@@ -23,4 +23,8 @@ theme.setup({
   sidebars = {"Mundo", "MundoDiff", "dap*" } -- Other sidebars
 })
 
+-- enable tokyonight theme
 vim.cmd[[colorscheme tokyonight]]
+
+-- show color is css and color names
+require('colorizer').setup()
