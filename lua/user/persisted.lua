@@ -59,7 +59,7 @@ local function session_exists()
     for _, value in ipairs(persisted.list()) do
       local filter_name = string.gsub(string.sub(value.name, 1, -6), "-", "_")
       if string.find(current_dir, filter_name) then
-        vim.g.session_exists = true
+        vim.cmd [[:SessionLoad]]
       end
     end
   end

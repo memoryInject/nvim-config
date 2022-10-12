@@ -94,12 +94,3 @@ nvim_tree.setup {
     relativenumber = false,
   },
 }
-
--- Check if session_exists, it came from persisted config
-if vim.g.session_exists then
-  -- if session_exists then do not open nvim-tree at startup
-  -- load the session
-  nvim_tree.config.hijack_directories.auto_open = false
-  -- vim.cmd [[:qa!]]
-  vim.cmd [[:SessionLoad]]
-end
