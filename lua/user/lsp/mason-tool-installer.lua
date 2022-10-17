@@ -14,21 +14,25 @@ mason_tool_installer.setup({
     "lua-language-server",
     "pyright",
     "typescript-language-server",
+    "bash-language-server",
 
     -- DAP
     "cpptools",
     "debugpy",
+    "bash-debug-adapter",
 
     -- Linter
     "cpplint",
     "eslint_d",
     "flake8",
+    "shellcheck",
 
     -- Formatter
     "black",
     "clang-format",
     "prettier",
     "stylua",
+    "beautysh"
   },
 
   -- if set to true this will check each tool for updates. If updates

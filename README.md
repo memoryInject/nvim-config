@@ -4,7 +4,7 @@ A Neovim lua based config.
 
 **Important:** This is still an early conversion from my vimscript to lua based config, there may be some breaking changes with some of the plugin used in this config. 
 
-Only test with NVIM v0.8.0 on Linux Ubuntu 20.04.5 LTS and WSL Ubuntu 20.04.2 LTS on Windows 10 x86_64.
+Only test with **NVIM v0.9.0-dev** on Linux Ubuntu 20.04.5 LTS and WSL Ubuntu 20.04.2 LTS on Windows 10 x86_64.
 
 
 ## Installation
@@ -19,7 +19,15 @@ When lauch Neovim for the first time with this config, it will install the plugi
 
 ### LSP, DAP, Linter, Formatter used in this config
 
-This config come with preconfigured LSP, DAP, Linters and Formatters for JavaScript, TypeScrpt, Python, Lua and C/C++ (these are the main languages I use usually).   
+This config come with preconfigured LSP, DAP, Linters and Formatters for:
+- JavaScript 
+- TypeScrpt 
+- Python 
+- Lua 
+- Bash Script
+- C/C++    
+
+These are the main languages I use usually.   
 Run this command in Neovim to show all the  preconfigured LSP, DAP, Linters and Formatters.
 ```vimscript
 :Mason
