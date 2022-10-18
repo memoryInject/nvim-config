@@ -23,7 +23,7 @@ null_ls.setup({
     }),
     diagnostics.cpplint,
     formatting.beautysh.with({ -- bash script formatter
-      extra_args = { "--indent-size", "2" },
+      extra_args = { "--indent-size", "4" },
     }),
     -- diagnostics.shellcheck, -- no need to enable here it enabled by bashls LSP
   },
