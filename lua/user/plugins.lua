@@ -47,7 +47,7 @@ return packer.startup(function(use)
   use("windwp/nvim-autopairs") -- Autopairs, integrates with both cmp and treesitter
   use("numToStr/Comment.nvim") -- Easily comment stuff
   use("kyazdani42/nvim-web-devicons")
-  use({ "kyazdani42/nvim-tree.lua", commit = "7282f7de8aedf861fe0162a559fc2b214383c51c" }) -- File explorer tree lock to commit because of bug in the latest commit
+  use({ "kyazdani42/nvim-tree.lua" }) -- File explorer tree
   use({ "rafcamlet/tabline-framework.nvim", requires = "kyazdani42/nvim-web-devicons" })
   use({
     "nvim-lualine/lualine.nvim",
