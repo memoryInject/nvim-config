@@ -67,5 +67,11 @@ wget https://github.com/sharkdp/fd/releases/download/v8.4.0/fd_8.4.0_amd64.deb
 sudo dpkg -i fd_8.4.0_amd64.deb
 ```
 
+[telescope-fzf-native.nvim](https://github.com/nvim-telescope/telescope-fzf-native.nvim):    
+more info: https://github.com/nvim-telescope/telescope-fzf-native.nvim#installation
+```bash
+sudo apt-get install cmake make gcc clang
+```
+
 ### Requirements for WSL
 Setup wsl-clipboard for system clipboard support: https://github.com/memoryInject/wsl-clipboard
