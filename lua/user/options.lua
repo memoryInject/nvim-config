@@ -44,4 +44,3 @@ vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work
 vim.cmd [[filetype plugin indent on]]          -- allow auto-indenting depending on file type
 vim.cmd [[filetype plugin on]]
 vim.cmd [[set ttyfast]]                        -- speed up scrolling
-vim.cmd [[au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif]] --go to the position I was when last editing the file

@@ -1,4 +1,5 @@
  require "user.options"
+ require "user.autocmd"
  require "user.wsl-clipboard"
  require "user.keymaps"
  require "user.plugins"
