@@ -48,6 +48,7 @@ This config require custom configuration for DAP debug adapters.
 
 #### JavaScript/TypeScript vscode-js-debug:   
   - Make sure to install `ts-node` globally for TypeScript debug: `npm i -g ts-node`   
+  - Install eslint `npm i -g eslint`
 
 #### C/C++ cpptools setup:  
   - Make sure to install `gcc and gdb`.
