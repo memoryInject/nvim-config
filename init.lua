@@ -16,7 +16,7 @@
  require "user.persisted"
  require "user.nvim-tree"
  require "user.lualine"
- require "user.tabline-framework"
+ require "user.tabline"
  require "user.mundo"
 
 -- NOTE: make sure the order { persisted, nvim-tree, lualine, tabline-framework } to work together
