@@ -28,3 +28,7 @@ null_ls.setup({
     -- diagnostics.shellcheck, -- no need to enable here it enabled by bashls LSP
   },
 })
+
+-- To disable something: https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/SOURCES.md#disablequery
+-- require("null_ls").disable("eslint")
+-- require("null_ls").enable("eslint")
