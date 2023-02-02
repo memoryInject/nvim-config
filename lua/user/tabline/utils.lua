@@ -196,10 +196,13 @@ M.shrink_string = function(str, max_len)
     max_len = 4
   end
 
-  if #str > max_len then
+  if str ~= nil and #str > max_len then
     return str:sub(1, math.ceil(max_len - 3)) .. "..."
   else
-    return str
+    if str ~= nil then
+      return str
+    end
+    return ""
   end
 end
 
