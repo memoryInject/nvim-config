@@ -13,10 +13,10 @@
  require "user.autopairs"
  require "user.comment"
  require "user.gitsigns"
- require "user.persisted"
  require "user.nvim-tree"
+ require "user.persisted"
  require "user.lualine"
  require "user.tabline"
  require "user.mundo"
 
--- NOTE: make sure the order { persisted, nvim-tree, lualine, tabline-framework } to work together
+-- NOTE: make sure the order { nvim-tree, persisted, lualine, tabline-framework } to work together

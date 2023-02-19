@@ -5,7 +5,7 @@ local opts = {
 
 local server_list = {
   "jsonls",
-  "sumneko_lua",
+  "lua_ls",
   --"pyright"
 }
 

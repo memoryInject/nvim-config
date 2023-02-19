@@ -52,17 +52,26 @@ require("telescope").load_extension("persisted") -- To load the telescope extens
 -- TODO:autoload on setup is not working, this is a hack.
 -- autoload session when nvim open like: `nvim .`
 -- Create a global variable `session_exists` if session exists
--- use this variable in nvim-tree to load session at startup
+-- use this at startup to load session otherwise open nvim-tree
 local function session_exists()
   if vim.v.argv[2] == '.' then
     local current_dir = string.gsub(vim.fn.getcwd(), "-", "_")
     for _, value in ipairs(persisted.list()) do
       local filter_name = string.gsub(string.sub(value.name, 1, -6), "-", "_")
       if string.find(current_dir, filter_name) then
-        vim.cmd [[:SessionLoad]]
+        -- return immediately if found session
+        return vim.cmd [[:SessionLoad]]
       end
     end
   end
+
+  -- Open nvim-tree if there is no session exists.
+  -- Need to open twise due to some render issues
+  require("nvim-tree.api").tree.open()
+  require("nvim-tree.api").tree.close()
+  require("nvim-tree.api").tree.open({
+    current_window = true,
+  })
 end
 
 session_exists()
