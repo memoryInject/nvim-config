@@ -4,7 +4,7 @@ A Neovim lua based config.
 
 **Important:** This is still an early conversion from my vimscript to lua based config, there may be some breaking changes with some of the plugin used in this config. 
 
-Only test with **NVIM v0.9.0-dev** on Linux Ubuntu 20.04.5 LTS and WSL Ubuntu 20.04.2 LTS on Windows 10 x86_64.
+Only test with **NVIM v0.9.0-dev-77-gf175ca9f7** on Linux Ubuntu 20.04.5 LTS and WSL Ubuntu 20.04.2 LTS on Windows 10 x86_64.
 
 
 ## Installation
