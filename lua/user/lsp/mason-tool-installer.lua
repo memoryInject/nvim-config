@@ -15,6 +15,9 @@ mason_tool_installer.setup({
     "pyright",
     "typescript-language-server",
     "bash-language-server",
+    "graphql-language-service-cli",
+    "tailwindcss-language-server",
+    "emmet-ls",
 
     -- DAP
     "cpptools",
