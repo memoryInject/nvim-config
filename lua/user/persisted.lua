@@ -63,15 +63,14 @@ local function session_exists()
         return vim.cmd [[:SessionLoad]]
       end
     end
+    -- Open nvim-tree if there is no session exists.
+    -- Need to open twise due to some render issues
+    require("nvim-tree.api").tree.open()
+    require("nvim-tree.api").tree.close()
+    require("nvim-tree.api").tree.open({
+      current_window = true,
+    })
   end
-
-  -- Open nvim-tree if there is no session exists.
-  -- Need to open twise due to some render issues
-  require("nvim-tree.api").tree.open()
-  require("nvim-tree.api").tree.close()
-  require("nvim-tree.api").tree.open({
-    current_window = true,
-  })
 end
 
 session_exists()
