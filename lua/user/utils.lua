@@ -71,4 +71,9 @@ if mason_settings then
   end
 end
 
+M.split_definition = function ()
+  vim.cmd.vsplit()
+  vim.lsp.buf.definition()
+end
+
 return M

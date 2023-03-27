@@ -82,6 +82,9 @@ keymap("n", "<leader>s", "<cmd>lua require('telescope').extensions.persisted.per
 -- Nvimtree
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 
+-- LSP
+keymap("n", "<leader>gd", ":lua require('user.utils').split_definition()<cr>", opts)
+
 -- null-ls fromatting
 keymap("n", "<leader>a", ":Format<cr>", opts)
 
