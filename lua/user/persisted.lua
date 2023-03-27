@@ -8,6 +8,7 @@ if not status_ok then
   return
 end
 
+-- function to run before the session is saved to disk
 local function before_save()
   local ignore_buffers = { "NvimTree", "Mundo" }
   -- loop through all the buffer and close ignore_buffers
@@ -22,6 +23,18 @@ local function before_save()
   end
 end
 
+ -- function to run after the session is sourced
+local function after_source()
+    -- Show Gitsigns after a session loaded
+    -- vim.cmd[[:Gitsigns reset_buffer]]
+    -- vim.cmd[[:Gitsigns reset_buffer_index]]
+    -- vim.cmd[[:Gitsigns attach]]
+    -- vim.cmd[[:qa!]]
+  local tnum = vim.api.nvim_get_current_tabpage()
+  vim.cmd[[:tabdo Gitsigns attach]]
+  vim.cmd.tabn({ args = { tnum } })
+end
+
 persisted.setup({
   save_dir = vim.fn.expand(vim.fn.stdpath("data") .. "/sessions/"), -- directory where session files are saved
   command = "VimLeavePre", -- the autocommand for which the session is saved
@@ -33,14 +46,6 @@ persisted.setup({
   on_autoload_no_session = nil, -- function to run when `autoload = true` but there is no session to load
   allowed_dirs = nil, -- table of dirs that the plugin will auto-save and auto-load from
   ignored_dirs = nil, -- table of dirs that are ignored when auto-saving and auto-loading
-  before_save = before_save, -- function to run before the session is saved to disk
-  after_save = nil, -- function to run after the session is saved to disk
-  after_source = function()
-    -- Show Gitsigns after a session loaded
-    vim.cmd[[:Gitsigns reset_buffer]]
-    vim.cmd[[:Gitsigns setup]]
-    -- vim.cmd[[:qa!]]
-  end, -- function to run after the session is sourced
   telescope = { -- options for the telescope extension
     before_source = nil, -- function to run before the session is sourced via telescope
     after_source = nil, -- function to run after the session is sourced via telescope
@@ -59,18 +64,39 @@ local function session_exists()
     for _, value in ipairs(persisted.list()) do
       local filter_name = string.gsub(string.sub(value.name, 1, -6), "-", "_")
       if string.find(current_dir, filter_name) then
-        -- return immediately if found session
-        return vim.cmd [[:SessionLoad]]
+       -- need to use defer function because of the API changes to this plugin
+       -- defer_fn is like setTimeout in JS
+       vim.defer_fn(function ()
+         if vim.g.loaded_persisted then
+           return persisted.load()
+         end
+       end, 0)
+       return
       end
     end
-    -- Open nvim-tree if there is no session exists.
-    -- Need to open twise due to some render issues
-    require("nvim-tree.api").tree.open()
-    require("nvim-tree.api").tree.close()
-    require("nvim-tree.api").tree.open({
-      current_window = true,
-    })
+
+  -- Open nvim tree if there is no session_exists
+  -- need to open twise due to some render issues
+  require("nvim-tree.api").tree.open()
+  require("nvim-tree.api").tree.close()
+  require("nvim-tree.api").tree.open({
+    current_window = true,
+  })
   end
 end
 
 session_exists()
+
+local group = vim.api.nvim_create_augroup("PersistedHooks", {})
+
+vim.api.nvim_create_autocmd({ "User" }, {
+  pattern = "PersistedSavePre",
+  group = group,
+  callback = before_save,
+})
+
+vim.api.nvim_create_autocmd({ "User" }, {
+  pattern = "PersistedLoadPost",
+  group = group,
+  callback = after_source,
+})
