@@ -84,6 +84,7 @@ keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 
 -- LSP
 keymap("n", "<leader>gd", ":lua require('user.utils').split_definition()<cr>", opts)
+keymap("n", "<leader>ca", ":lua vim.lsp.buf.code_action()<cr>", opts)
 
 -- null-ls fromatting
 keymap("n", "<leader>a", ":Format<cr>", opts)
