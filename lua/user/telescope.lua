@@ -110,9 +110,15 @@ telescope.setup({
     tele_tabby = {
       use_highlighter = true,
     },
+    ["ui-select"] = {},
   },
 })
 
 telescope.load_extension("fzf")
 -- Load tele_tabby, tab switcher extension
 telescope.load_extension("tele_tabby")
+
+-- it set `vim.ui.select` to telescope
+-- for example that neovim core stuff can fill the telescope picker.
+-- Example would be lua vim.lsp.buf.code_action().
+telescope.load_extension("ui-select")
