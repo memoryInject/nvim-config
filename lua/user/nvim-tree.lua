@@ -1,3 +1,9 @@
+-- useful keymaps:
+--  H - hide/unhide . files
+--  B - hide/unhide Do not show files that have no |buflisted()| buffer.
+--  C -  hide/unhide Do not show files with no git status
+--  U - hide/unhide Custom list of vim regex for file/directory names that will not be shown.
+--
 -- following options are the default
 -- each of these are documented in `:help nvim-tree.OPTION_NAME`
 local nvim_tree_icons = {
@@ -26,14 +32,13 @@ if not status_ok then
   return
 end
 
-local config_status_ok, nvim_tree_config = pcall(require, "nvim-tree.config")
-if not config_status_ok then
+local on_attach_status_ok, nvim_tree_on_attach = pcall(require, "user.nvim-tree-on-attach")
+if not on_attach_status_ok then
   return
 end
 
-local tree_cb = nvim_tree_config.nvim_tree_callback
-
 nvim_tree.setup {
+  on_attach = nvim_tree_on_attach.on_attach,
   actions = {
     open_file = {
       quit_on_open = true,
@@ -59,7 +64,7 @@ nvim_tree.setup {
   update_cwd = true,
   hijack_directories = {
     enable = true,
-    auto_open = true,
+    auto_open = false,
   },
   diagnostics = {
     enable = true,
@@ -84,14 +89,6 @@ nvim_tree.setup {
     width = 30,
     hide_root_folder = false,
     side = "left",
-    mappings = {
-      custom_only = false,
-      list = {
-        { key = { "l", "<CR>", "o" }, cb = tree_cb "edit" },
-        { key = "h", cb = tree_cb "close_node" },
-        { key = "v", cb = tree_cb "vsplit" },
-      },
-    },
     number = false,
     relativenumber = false,
   },

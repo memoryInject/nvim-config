@@ -30,9 +30,11 @@ local function after_source()
     -- vim.cmd[[:Gitsigns reset_buffer_index]]
     -- vim.cmd[[:Gitsigns attach]]
     -- vim.cmd[[:qa!]]
-  local tnum = vim.api.nvim_get_current_tabpage()
-  vim.cmd[[:tabdo Gitsigns attach]]
-  vim.cmd.tabn({ args = { tnum } })
+  vim.defer_fn(function ()
+    local tnum = vim.api.nvim_get_current_tabpage()
+    vim.cmd[[:tabdo Gitsigns attach]]
+    vim.cmd.tabn({ args = { tnum } })
+  end, 0)
 end
 
 persisted.setup({
