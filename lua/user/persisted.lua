@@ -61,7 +61,14 @@ require("telescope").load_extension("persisted") -- To load the telescope extens
 -- Create a global variable `session_exists` if session exists
 -- use this at startup to load session otherwise open nvim-tree
 local function session_exists()
-  if vim.v.argv[2] == '.' then
+  local arg_token = 2
+
+  -- Check if the os is macos
+  if vim.fn.has('macunix') then
+    arg_token = 3
+  end
+
+  if vim.v.argv[arg_token] == '.' then
     local current_dir = string.gsub(vim.fn.getcwd(), "-", "_")
     for _, value in ipairs(persisted.list()) do
       local filter_name = string.gsub(string.sub(value.name, 1, -6), "-", "_")

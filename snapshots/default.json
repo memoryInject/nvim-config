@@ -1,1 +1,128 @@
-{"cmp-nvim-lsp": {"commit": "0e6b2ed"}, "telescope.nvim": {"commit": "713d26b"}, "cmp_luasnip": {"commit": "1809552"}, "friendly-snippets": {"commit": "2308366"}, "mason.nvim": {"commit": "057ac5c"}, "nvim-dap-vscode-js": {"commit": "03bd296"}, "nvim-colorizer.lua": {"commit": "dde3084"}, "tabline-framework.nvim": {"commit": "f0d229c"}, "telescope-fzf-native.nvim": {"commit": "580b6c4"}, "vim-mundo": {"commit": "b53d35f"}, "nvim-lspconfig": {"commit": "3bd4ca4"}, "packer.nvim": {"commit": "1d0cf98"}, "nvim-autopairs": {"commit": "7747bba"}, "Comment.nvim": {"commit": "e1fe531"}, "darkplus.nvim": {"commit": "1a35b1f"}, "LuaSnip": {"commit": "a46ab6f"}, "mason-tool-installer.nvim": {"commit": "a6c4d7d"}, "vscode-js-debug": {"commit": "ff4f4f84"}, "nvim-dap-python": {"commit": "972b8b8"}, "telescope-tele-tabby.nvim": {"commit": "e58710e"}, "nvim-dap-ui": {"commit": "749bfe1"}, "popup.nvim": {"commit": "b7404d3"}, "plenary.nvim": {"commit": "9ac3e95"}, "gitsigns.nvim": {"commit": "e5edefd"}, "nvim-tree.lua": {"commit": "53295de"}, "nvim-web-devicons": {"commit": "b34362b"}, "nvim-cmp": {"commit": "9b0bc5f"}, "nvim-ts-autotag": {"commit": "40615e9"}, "tokyonight.nvim": {"commit": "f2ed287"}, "nvim-dap": {"commit": "6cedcb5"}, "nvim-treesitter": {"commit": "bff7115b"}, "null-ls.nvim": {"commit": "33b853a"}, "telescope-ui-select.nvim": {"commit": "62ea5e5"}, "cmp-nvim-lua": {"commit": "f12408b"}, "persisted.nvim": {"commit": "304a3c5"}, "vim-python-pep8-indent": {"commit": "60ba5e1"}, "mason-lspconfig.nvim": {"commit": "cec0e6d"}, "lualine.nvim": {"commit": "84ffb80"}, "nvim-ts-context-commentstring": {"commit": "0bf8fbc"}, "cmp-cmdline": {"commit": "5af1bb7"}, "cmp-path": {"commit": "91ff86c"}, "cmp-buffer": {"commit": "3022dbc"}}
+{
+  "cmp-nvim-lsp": {
+    "commit": "0e6b2ed"
+  },
+  "telescope.nvim": {
+    "commit": "713d26b"
+  },
+  "cmp_luasnip": {
+    "commit": "1809552"
+  },
+  "friendly-snippets": {
+    "commit": "2308366"
+  },
+  "mason.nvim": {
+    "commit": "057ac5c"
+  },
+  "nvim-dap-vscode-js": {
+    "commit": "03bd296"
+  },
+  "nvim-colorizer.lua": {
+    "commit": "dde3084"
+  },
+  "tabline-framework.nvim": {
+    "commit": "f0d229c"
+  },
+  "telescope-fzf-native.nvim": {
+    "commit": "580b6c4"
+  },
+  "vim-mundo": {
+    "commit": "b53d35f"
+  },
+  "nvim-lspconfig": {
+    "commit": "3bd4ca4"
+  },
+  "packer.nvim": {
+    "commit": "1d0cf98"
+  },
+  "nvim-autopairs": {
+    "commit": "7747bba"
+  },
+  "Comment.nvim": {
+    "commit": "e1fe531"
+  },
+  "darkplus.nvim": {
+    "commit": "1a35b1f"
+  },
+  "LuaSnip": {
+    "commit": "a46ab6f"
+  },
+  "mason-tool-installer.nvim": {
+    "commit": "a6c4d7d"
+  },
+  "vscode-js-debug": {
+    "commit": "ff4f4f84"
+  },
+  "nvim-dap-python": {
+    "commit": "972b8b8"
+  },
+  "telescope-tele-tabby.nvim": {
+    "commit": "e58710e"
+  },
+  "nvim-dap-ui": {
+    "commit": "749bfe1"
+  },
+  "popup.nvim": {
+    "commit": "b7404d3"
+  },
+  "plenary.nvim": {
+    "commit": "9ac3e95"
+  },
+  "gitsigns.nvim": {
+    "commit": "e5edefd"
+  },
+  "nvim-tree.lua": {
+    "commit": "53295de"
+  },
+  "nvim-web-devicons": {
+    "commit": "b34362b"
+  },
+  "nvim-cmp": {
+    "commit": "9b0bc5f"
+  },
+  "nvim-ts-autotag": {
+    "commit": "40615e9"
+  },
+  "tokyonight.nvim": {
+    "commit": "f2ed287"
+  },
+  "nvim-dap": {
+    "commit": "6cedcb5"
+  },
+  "nvim-treesitter": {
+    "commit": "bff7115b"
+  },
+  "null-ls.nvim": {
+    "commit": "33b853a"
+  },
+  "telescope-ui-select.nvim": {
+    "commit": "62ea5e5"
+  },
+  "cmp-nvim-lua": {
+    "commit": "f12408b"
+  },
+  "persisted.nvim": {
+    "commit": "304a3c5"
+  },
+  "vim-python-pep8-indent": {
+    "commit": "60ba5e1"
+  },
+  "mason-lspconfig.nvim": {
+    "commit": "cec0e6d"
+  },
+  "lualine.nvim": {
+    "commit": "84ffb80"
+  },
+  "nvim-ts-context-commentstring": {
+    "commit": "0bf8fbc"
+  },
+  "cmp-cmdline": {
+    "commit": "5af1bb7"
+  },
+  "cmp-path": {
+    "commit": "91ff86c"
+  },
+  "cmp-buffer": {
+    "commit": "3022dbc"
+  }
+}

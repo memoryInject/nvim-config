@@ -28,5 +28,12 @@ theme.setup({
 
 vim.cmd([[ colorscheme darkplus ]])
 
+
+-- This will fix highlight broken in nvim 0.9 and treesitter
+-- https://www.reddit.com/r/neovim/comments/12gvms4/this_is_why_your_higlights_look_different_in_90/
+for _, group in ipairs(vim.fn.getcompletion("@lsp", "highlight")) do
+  vim.api.nvim_set_hl(0, group, {})
+end
+
 -- show color is css and color names
 require("colorizer").setup()

@@ -38,7 +38,7 @@ end
 packer.init({
   -- TODO: change `sanpshot = nil` to `snapshot = 'default.json'`
   -- create default config :PackerSnapshot default.json
-  snapshot = nil, -- Name of the snapshot you would like to load at startup
+  snapshot = 'default.json', -- Name of the snapshot you would like to load at startup
   snapshot_path = join_paths(fn.stdpath 'config', 'snapshots'), -- Default save directory for snapshots `~/config/nvim/snapshots`
   display = {
     open_fn = function()
