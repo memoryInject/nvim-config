@@ -24,8 +24,10 @@ local nvim_tree_icons = {
     empty = "",
     empty_open = "",
     symlink = "",
-    arrow_closed = "󰐕",
-    arrow_open = "󰍴",
+    -- arrow_closed = "󰐕",
+    -- arrow_open = "󰍴",
+    arrow_closed = "",
+    arrow_open = "",
   },
 }
 

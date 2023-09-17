@@ -34,6 +34,17 @@ require("dap").configurations.typescript = {
   }, ]]
 }
 
+require("dap").configurations.typescriptreact = {
+  {
+    type = "pwa-chrome",
+    request = "launch",
+    name = "Start Chrome with \"localhost\"",
+    url = "http://localhost:5173",
+    webRoot = "${workspaceFolder}/src",
+    userDataDir = "${workspaceFolder}/.vscode/vscode-chrome-debug-userdatadir"
+  }
+}
+
 -- NOTE: config javascript debug: https://code.visualstudio.com/docs/nodejs/nodejs-debugging
 -- https://github.com/mxsdev/nvim-dap-vscode-js#configurations
 require("dap").configurations.javascript = {

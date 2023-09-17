@@ -87,10 +87,10 @@
     "commit": "f2ed287"
   },
   "nvim-dap": {
-    "commit": "6cedcb5"
+    "commit": "b3d4408"
   },
   "nvim-treesitter": {
-    "commit": "bff7115b"
+    "commit": "794266a"
   },
   "null-ls.nvim": {
     "commit": "33b853a"
