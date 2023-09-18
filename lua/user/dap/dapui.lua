@@ -9,21 +9,21 @@ if not status_dapui then
 end
 
 dapui.setup({
-  icons = { expanded = "ﱮ", collapsed = "", current_frame = "契" },
+  icons = { expanded = "", collapsed = "", current_frame = "" },
   controls = {
     -- Requires Neovim nightly (or 0.8 when released)
     enabled = true,
     -- Display controls in this element
     element = "repl",
     icons = {
-      pause = "",
-      play = "契",
-      step_into = "",
-      step_over = "",
-      step_out = "",
-      step_back = "倫",
-      run_last = "ﰇ",
-      terminate = "",
+      pause = "",
+      play = "",
+      step_into = "",
+      step_over = "",
+      step_out = "",
+      step_back = "",
+      run_last = "",
+      terminate = "",
     },
   },
 })

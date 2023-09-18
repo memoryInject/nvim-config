@@ -94,6 +94,8 @@ keymap("n", "<leader>u", ":MundoToggle<cr>", opts)
 
 -- DAP
 keymap("n", "<leader>db", ":lua require'dap'.toggle_breakpoint()<CR>", opts)
+keymap("n", "<leader>ds", ":lua require'dap'.clear_breakpoints()<CR>", opts)
+keymap("n", "<leader>dx", ":lua require'dap'.terminate()<CR>", opts)
 keymap("n", "<leader>dc", ":lua require'dap'.continue()<CR>", opts)
 keymap("n", "<leader>do", ":lua require'dap'.step_over()<CR>", opts)
 keymap("n", "<leader>di", ":lua require'dap'.step_into()<CR>", opts)

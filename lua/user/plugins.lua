@@ -102,7 +102,7 @@ return packer.startup(function(use)
   use({
     "microsoft/vscode-js-debug",
     opt = true,
-    run = "npm install --legacy-peer-deps && npm run compile",
+    run = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out",
   }) -- javascript debugger
 
   -- Telescope

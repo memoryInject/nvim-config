@@ -51,7 +51,7 @@
     "commit": "a6c4d7d"
   },
   "vscode-js-debug": {
-    "commit": "ff4f4f84"
+    "commit": "65f087c4"
   },
   "nvim-dap-python": {
     "commit": "972b8b8"
@@ -87,10 +87,10 @@
     "commit": "f2ed287"
   },
   "nvim-dap": {
-    "commit": "6cedcb5"
+    "commit": "b3d4408"
   },
   "nvim-treesitter": {
-    "commit": "bff7115b"
+    "commit": "794266a"
   },
   "null-ls.nvim": {
     "commit": "33b853a"
@@ -111,7 +111,7 @@
     "commit": "cec0e6d"
   },
   "lualine.nvim": {
-    "commit": "84ffb80"
+    "commit": "05d78e9"
   },
   "nvim-ts-context-commentstring": {
     "commit": "0bf8fbc"

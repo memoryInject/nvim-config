@@ -10,6 +10,6 @@ if not status_ok then
 end
 
 -- Custom breakpoint icon
-vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "ErrorMsg", linehl = "", numhl = "" })
-vim.fn.sign_define("DapBreakpointRejected", { text = "", texthl = "ErrorMsg", linehl = "", numhl = "" })
-vim.fn.sign_define("DapStopped", { text = "", texthl = "WarningMsg", linehl = "", numhl = "" })
+vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "ErrorMsg", linehl = "", numhl = "" })
+vim.fn.sign_define("DapBreakpointRejected", { text = "", texthl = "ErrorMsg", linehl = "", numhl = "" })
+vim.fn.sign_define("DapStopped", { text = "", texthl = "WarningMsg", linehl = "", numhl = "" })
