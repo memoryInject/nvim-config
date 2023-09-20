@@ -18,5 +18,6 @@
  require "user.lualine"
  require "user.tabline"
  require "user.mundo"
+ require "user.harpoon"
 
 -- NOTE: make sure the order { nvim-tree, persisted, lualine, tabline-framework } to work together

@@ -84,6 +84,7 @@ keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 
 -- LSP
 keymap("n", "<leader>gd", ":lua require('user.utils').split_definition()<cr>", opts)
+keymap("n", "<leader>gt", ":lua require('user.utils').tab_definition()<cr>", opts)
 keymap("n", "<leader>ca", ":lua vim.lsp.buf.code_action()<cr>", opts)
 
 -- null-ls fromatting
@@ -100,3 +101,11 @@ keymap("n", "<leader>dc", ":lua require'dap'.continue()<CR>", opts)
 keymap("n", "<leader>do", ":lua require'dap'.step_over()<CR>", opts)
 keymap("n", "<leader>di", ":lua require'dap'.step_into()<CR>", opts)
 keymap("n", "<leader>du", ":lua require'dapui'.toggle()<CR>", opts)
+
+-- Harpoon
+keymap("n", "<leader>ha", "<cmd>Harpoon add<cr>", opts)
+keymap("n", "<leader>hs", "<cmd>Harpoon add<cr>", opts)
+keymap("n", "<leader>hr", "<cmd>Harpoon remove<cr>", opts)
+keymap("n", "<leader>hd", "<cmd>Harpoon remove<cr>", opts)
+keymap("n", "<leader>hu", "<cmd>Harpoon ui<cr>", opts)
+keymap("n", "<leader>ht", "<cmd>Telescope harpoon marks<cr>", opts)

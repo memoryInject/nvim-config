@@ -20,6 +20,14 @@ require("dap").configurations.typescript = {
     cwd = "${workspaceFolder}",
     program = "${workspaceFolder}/src/index.ts",
   },
+  {
+    type = "pwa-chrome",
+    request = "launch",
+    name = 'Start Chrome with "localhost"',
+    url = "http://localhost:7080",
+    webRoot = "${workspaceFolder}/src",
+    userDataDir = "${workspaceFolder}/.vscode/vscode-chrome-debug-userdatadir",
+  },
   -- TODO: default node based configuration is jump and debug compiled js code not ts file, need fix
   --[[ {
     type = "pwa-node",

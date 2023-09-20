@@ -66,6 +66,7 @@ return packer.startup(function(use)
   use("simnalamburt/vim-mundo") -- The undo history visualizer for VIM require pynvim
   use("NvChad/nvim-colorizer.lua") -- show color on css files 
   use("Vimjas/vim-python-pep8-indent") -- A nicer Python indentation style (treestitter is broken make sure to disable intent for python in treesitter)
+  use("ChristianChiarulli/harpoon") -- bookmark project files
 
   -- Colorscheme
   use("folke/tokyonight.nvim")
