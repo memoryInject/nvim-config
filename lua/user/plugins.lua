@@ -30,7 +30,7 @@ if not status_ok then
 end
 
 local join_paths = function(...)
-  local separator = '/'
+  local separator = "/"
   return table.concat({ ... }, separator)
 end
 
@@ -38,8 +38,8 @@ end
 packer.init({
   -- TODO: change `sanpshot = nil` to `snapshot = 'default.json'`
   -- create default config :PackerSnapshot default.json
-  snapshot = 'default.json', -- Name of the snapshot you would like to load at startup
-  snapshot_path = join_paths(fn.stdpath 'config', 'snapshots'), -- Default save directory for snapshots `~/config/nvim/snapshots`
+  snapshot = "default.json",                                    -- Name of the snapshot you would like to load at startup
+  snapshot_path = join_paths(fn.stdpath("config"), "snapshots"), -- Default save directory for snapshots `~/config/nvim/snapshots`
   display = {
     open_fn = function()
       return require("packer.util").float({ border = "rounded" })
@@ -50,12 +50,12 @@ packer.init({
 -- Install your plugins here
 return packer.startup(function(use)
   -- My plugins here
-  use("wbthomason/packer.nvim") -- Have packer manage itself
-  use("nvim-lua/popup.nvim") -- An implementation of the Popup API from vim in Neovim
-  use("nvim-lua/plenary.nvim") -- Useful lua functions used ny lots of plugins
-  use("windwp/nvim-autopairs") -- Autopairs, integrates with both cmp and treesitter
-  use("windwp/nvim-ts-autotag") -- Use treesitter to auto close and auto rename html tag
-  use("numToStr/Comment.nvim") -- Easily comment stuff
+  use("wbthomason/packer.nvim")      -- Have packer manage itself
+  use("nvim-lua/popup.nvim")         -- An implementation of the Popup API from vim in Neovim
+  use("nvim-lua/plenary.nvim")       -- Useful lua functions used ny lots of plugins
+  use("windwp/nvim-autopairs")       -- Autopairs, integrates with both cmp and treesitter
+  use("windwp/nvim-ts-autotag")      -- Use treesitter to auto close and auto rename html tag
+  use("numToStr/Comment.nvim")       -- Easily comment stuff
   use("kyazdani42/nvim-web-devicons")
   use({ "kyazdani42/nvim-tree.lua" }) -- File explorer tree
   use({ "rafcamlet/tabline-framework.nvim", requires = "kyazdani42/nvim-web-devicons" })
@@ -63,42 +63,42 @@ return packer.startup(function(use)
     "nvim-lualine/lualine.nvim",
     requires = { "kyazdani42/nvim-web-devicons", opt = true },
   })
-  use("simnalamburt/vim-mundo") -- The undo history visualizer for VIM require pynvim
-  use("NvChad/nvim-colorizer.lua") -- show color on css files 
-  use("Vimjas/vim-python-pep8-indent") -- A nicer Python indentation style (treestitter is broken make sure to disable intent for python in treesitter)
-  use("ChristianChiarulli/harpoon") -- bookmark project files
+  use("simnalamburt/vim-mundo")                  -- The undo history visualizer for VIM require pynvim
+  use("NvChad/nvim-colorizer.lua")               -- show color on css files
+  use("Vimjas/vim-python-pep8-indent")           -- A nicer Python indentation style (treestitter is broken make sure to disable intent for python in treesitter)
+  use({ "memoryInject/harpoon", branch = "dev" }) -- bookmark project files
 
   -- Colorscheme
   use("folke/tokyonight.nvim")
   use("lunarvim/darkplus.nvim")
 
   -- cmp plugins
-  use("hrsh7th/nvim-cmp") -- The completion plugin
-  use("hrsh7th/cmp-buffer") -- buffer completions
-  use("hrsh7th/cmp-path") -- path completions
-  use("hrsh7th/cmp-cmdline") -- cmdline completions
+  use("hrsh7th/nvim-cmp")        -- The completion plugin
+  use("hrsh7th/cmp-buffer")      -- buffer completions
+  use("hrsh7th/cmp-path")        -- path completions
+  use("hrsh7th/cmp-cmdline")     -- cmdline completions
   use("saadparwaiz1/cmp_luasnip") -- snippet completions
   use("hrsh7th/cmp-nvim-lsp")
   use("hrsh7th/cmp-nvim-lua")
 
   -- snippets
-  use("L3MON4D3/LuaSnip") --snippet engine
+  use("L3MON4D3/LuaSnip")            --snippet engine
   use("rafamadriz/friendly-snippets") -- a bunch of snippets to use
 
   -- LSP
   use({
-    "williamboman/mason.nvim", -- language server installer
-    "williamboman/mason-lspconfig.nvim", -- LSP configuration
-    "neovim/nvim-lspconfig", -- enable LSP
+    "williamboman/mason.nvim",                    -- language server installer
+    "williamboman/mason-lspconfig.nvim",          -- LSP configuration
+    "neovim/nvim-lspconfig",                      -- enable LSP
   })
   use("WhoIsSethDaniel/mason-tool-installer.nvim") -- Auto install LSP, DAP, Linter and Formatter for Mason
   -- use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
-  use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
+  use("jose-elias-alvarez/null-ls.nvim")          -- for formatters and linters
 
   -- DAP
-  use("mfussenegger/nvim-dap") -- enable DAP client
-  use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }) -- UI for dap
-  use("mfussenegger/nvim-dap-python") -- debug python (make sure pip install debugpy with virtual environment)
+  use("mfussenegger/nvim-dap")                                                -- enable DAP client
+  use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } })     -- UI for dap
+  use("mfussenegger/nvim-dap-python")                                         -- debug python (make sure pip install debugpy with virtual environment)
   use({ "mxsdev/nvim-dap-vscode-js", requires = { "mfussenegger/nvim-dap" } }) -- debug javascript client
   use({
     "microsoft/vscode-js-debug",
