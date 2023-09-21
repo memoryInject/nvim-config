@@ -3,7 +3,7 @@ if not status_ok then
   return
 end
 
-gitsigns.setup {
+gitsigns.setup({
   signs = {
     add = { hl = "GitSignsAdd", text = "▎", numhl = "GitSignsAddNr", linehl = "GitSignsAddLn" },
     change = { hl = "GitSignsChange", text = "▎", numhl = "GitSignsChangeNr", linehl = "GitSignsChangeLn" },
@@ -12,8 +12,8 @@ gitsigns.setup {
     changedelete = { hl = "GitSignsChange", text = "▎", numhl = "GitSignsChangeNr", linehl = "GitSignsChangeLn" },
   },
   signcolumn = true, -- Toggle with `:Gitsigns toggle_signs`
-  numhl = false, -- Toggle with `:Gitsigns toggle_numhl`
-  linehl = false, -- Toggle with `:Gitsigns toggle_linehl`
+  numhl = false,    -- Toggle with `:Gitsigns toggle_numhl`
+  linehl = false,   -- Toggle with `:Gitsigns toggle_linehl`
   word_diff = false, -- Toggle with `:Gitsigns toggle_word_diff`
   watch_gitdir = {
     interval = 1000,
@@ -45,11 +45,11 @@ gitsigns.setup {
   yadm = {
     enable = false,
   },
-}
+})
 
 -- Remove gitsign background for color scheme solarized
-vim.cmd[[
+vim.cmd([[
   :hi GitSignsDelete guibg=none
   :hi GitSignsChange guibg=none
   :hi GitSignsAdd guibg=none
-]]
+]])

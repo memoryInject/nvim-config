@@ -18,6 +18,7 @@ mason_tool_installer.setup({
     "graphql-language-service-cli",
     "tailwindcss-language-server",
     "emmet-ls",
+    "rust-analyzer",
 
     -- DAP
     "cpptools",
@@ -35,7 +36,7 @@ mason_tool_installer.setup({
     "clang-format",
     "prettier",
     "stylua",
-    "beautysh"
+    "beautysh",
   },
 
   -- if set to true this will check each tool for updates. If updates

@@ -36,11 +36,11 @@ vim.opt.guifont = "monospace:h17"               -- the font used in graphical ne
 vim.opt.cc = "80"                               -- set an 80 column border for good coding style
 vim.opt.belloff = "all"                         -- stop all the sounds
 
-vim.opt.shortmess:append "c"
+vim.opt.shortmess:append("c")
 
-vim.cmd "set whichwrap+=<,>,[,],h,l"
-vim.cmd [[set iskeyword+=-]]
-vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work
-vim.cmd [[filetype plugin indent on]]          -- allow auto-indenting depending on file type
-vim.cmd [[filetype plugin on]]
-vim.cmd [[set ttyfast]]                        -- speed up scrolling
+vim.cmd("set whichwrap+=<,>,[,],h,l")
+vim.cmd([[set iskeyword+=-]])
+vim.cmd([[set formatoptions-=cro]])    -- TODO: this doesn't seem to work
+vim.cmd([[filetype plugin indent on]]) -- allow auto-indenting depending on file type
+vim.cmd([[filetype plugin on]])
+vim.cmd([[set ttyfast]])               -- speed up scrolling

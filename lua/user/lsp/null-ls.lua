@@ -14,7 +14,11 @@ null_ls.setup({
   debug = false,
   sources = {
     formatting.prettier.with({
-      extra_args = { "--config-precedence", "prefer-file", "--single-quote", --[[ "--jsx-single-quote" ]] },
+      extra_args = {
+        "--config-precedence",
+        "prefer-file",
+        "--single-quote", --[[ "--jsx-single-quote" ]]
+      },
     }),
     diagnostics.eslint,
     code_actions.eslint,

@@ -39,7 +39,7 @@ if not on_attach_status_ok then
   return
 end
 
-nvim_tree.setup {
+nvim_tree.setup({
   on_attach = nvim_tree_on_attach.on_attach,
   actions = {
     open_file = {
@@ -48,8 +48,8 @@ nvim_tree.setup {
   },
   renderer = {
     icons = {
-      glyphs = nvim_tree_icons
-    }
+      glyphs = nvim_tree_icons,
+    },
   },
   disable_netrw = true,
   hijack_netrw = true,
@@ -94,4 +94,4 @@ nvim_tree.setup {
     number = false,
     relativenumber = false,
   },
-}
+})
