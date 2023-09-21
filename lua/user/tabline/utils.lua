@@ -318,7 +318,7 @@ M.re_paginate = function(tab_names, page_range, current_page, win_width, tab_wid
   return M.re_paginate(shrinked_tab_names, page_range - 1, current_page, win_width, tab_width, max_len - 1)
 end
 
-M.max_len = 21 -- initial max_len for shrink_string
+M.max_len = 21     -- initial max_len for shrink_string
 M.extra_space = 21 -- extra details on the tabline that took some spaces
 
 M.get_range_maxlen = function()

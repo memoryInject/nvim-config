@@ -8,7 +8,7 @@ end
 dap.adapters.cppdbg = {
   id = "cppdbg",
   type = "executable",
-  command = "OpenDebugAD7"
+  command = "OpenDebugAD7",
 }
 
 dap.configurations.cpp = {
@@ -25,7 +25,7 @@ dap.configurations.cpp = {
       {
         text = "-enable-pretty-printing",
         description = "enable pretty printing",
-        ignoreFailures = true
+        ignoreFailures = true,
       },
     },
   },

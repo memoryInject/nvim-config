@@ -27,4 +27,3 @@ end
 -- local debugpy = os.getenv("HOME") .. "/.local/share/nvim/mason/bin/debugpy"
 
 dap_python.setup(python)
-

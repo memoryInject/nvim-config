@@ -2,9 +2,7 @@
 
 A Neovim lua based config.   
 
-**Important:** This is still an early conversion from my vimscript to lua based config, there may be some breaking changes with some of the plugin used in this config. 
-
-Only test with **NVIM v0.9.0-dev-77-gf175ca9f7** on Linux Ubuntu 20.04.5 LTS and WSL Ubuntu 20.04.2 LTS on Windows 10 x86_64.
+Only test with **NVIM v0.9.2 on macOS Ventura 13.2.1**
 
 
 ## Installation
@@ -25,17 +23,14 @@ This config come with preconfigured LSP, DAP, Linters and Formatters for:
 - Python 
 - Lua 
 - Bash Script
-- C/C++    
+- C/C++
+- Rust (LSP, Linter and Formatter only)
+- Chrome debugger for typescript(.ts) and typescriptreact(.tsx)
 
 These are the main languages I use usually.   
 Run this command in Neovim to show all the  preconfigured LSP, DAP, Linters and Formatters.
 ```vimscript
 :Mason
-```
-
-**Optional:**  add mason bin path to ~/.zshrc to access all the LSP, DAP, Linters and Formatters outside Neovim
-```bash
-echo 'export PATH="/home/$USER/.local/share/nvim/mason/bin:$PATH"' >> ~/.zshrc
 ```
 
 ## Additional requirements
@@ -56,23 +51,11 @@ This config require custom configuration for DAP debug adapters.
 
 ### Requirements for Telescope
 
-Ripgrep for live grep:
-```bash
-curl -LO https://github.com/BurntSushi/ripgrep/releases/download/13.0.0/ripgrep_13.0.0_amd64.deb
-sudo dpkg -i ripgrep_13.0.0_amd64.deb
-```
+[Ripgrep for live grep](https://github.com/BurntSushi/ripgrep) 
 
-Fd for fast file find:
-```bash
-wget https://github.com/sharkdp/fd/releases/download/v8.4.0/fd_8.4.0_amd64.deb
-sudo dpkg -i fd_8.4.0_amd64.deb
-```
+[Fd for fast file find](https://github.com/sharkdp/fd)
 
-[telescope-fzf-native.nvim](https://github.com/nvim-telescope/telescope-fzf-native.nvim):    
-more info: https://github.com/nvim-telescope/telescope-fzf-native.nvim#installation
-```bash
-sudo apt-get install cmake make gcc clang
-```
+[telescope-fzf-native.nvim](https://github.com/nvim-telescope/telescope-fzf-native.nvim)
 
 ### Requirements for WSL
 Setup wsl-clipboard for system clipboard support: https://github.com/memoryInject/wsl-clipboard

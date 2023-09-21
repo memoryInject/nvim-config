@@ -16,12 +16,12 @@ if is_wsl() then
     name = "wsl-clipboard",
     copy = {
       ["+"] = "wcopy",
-      ["*"] = "wcopy"
+      ["*"] = "wcopy",
     },
     paste = {
       ["+"] = "wpaste",
-      ["*"] = "wpaste"
+      ["*"] = "wpaste",
     },
-    cache_enabled = true
+    cache_enabled = true,
   }
 end

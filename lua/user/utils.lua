@@ -71,9 +71,65 @@ if mason_settings then
   end
 end
 
-M.split_definition = function ()
+-- simulate user keypress
+-- https://www.youtube.com/watch?v=MVW5zrQeNL0
+local function feedkeys(key, mode)
+  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(key, true, true, true), mode, true)
+end
+
+M.go_to_definition = function()
+  vim.lsp.buf.definition()
+  vim.defer_fn(function()
+    if vim.api.nvim_buf_get_name(0) == "" then
+      feedkeys("j", "n")
+      feedkeys("<cr>", "n")
+      feedkeys("<c-w>", "n")
+      feedkeys("w", "n")
+      vim.defer_fn(function()
+        vim.api.nvim_buf_delete(0, {})
+        feedkeys("<c-w>", "n")
+        feedkeys("w", "n")
+      end, 20)
+    end
+  end, 20)
+end
+
+M.split_definition = function()
   vim.cmd.vsplit()
   vim.lsp.buf.definition()
+  vim.defer_fn(function()
+    if vim.api.nvim_buf_get_name(0) == "" then
+      feedkeys("j", "n")
+      feedkeys("<cr>", "n")
+      feedkeys("<c-w>", "n")
+      feedkeys("w", "n")
+      vim.defer_fn(function()
+        vim.api.nvim_buf_delete(0, {})
+        feedkeys("<c-w>", "n")
+        feedkeys("w", "n")
+      end, 20)
+    end
+  end, 20)
+end
+
+M.tab_definition = function()
+  local pos = vim.api.nvim_win_get_cursor(0)
+  vim.cmd.tabnew("%")
+  vim.api.nvim_win_set_cursor(0, pos)
+  vim.lsp.buf.definition()
+  -- this defer func fix the ts-server open quickfix list if more than one file found
+  -- https://github.com/neovim/neovim/issues/14556
+  vim.defer_fn(function()
+    if vim.api.nvim_buf_get_name(0) == "" then
+      feedkeys("j", "n")
+      feedkeys("<cr>", "n")
+      feedkeys("<c-w>", "n")
+      feedkeys("w", "n")
+      vim.defer_fn(function()
+        vim.api.nvim_buf_delete(0, {})
+      end, 20)
+    end
+  end, 20)
 end
 
 return M
