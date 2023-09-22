@@ -123,3 +123,9 @@ keymap("n", "<leader>hr", "<cmd>Harpoon remove<cr>", opts)
 keymap("n", "<leader>hd", "<cmd>Harpoon remove<cr>", opts)
 keymap("n", "<leader>hu", "<cmd>Harpoon ui<cr>", opts)
 keymap("n", "<leader>ht", "<cmd>Telescope harpoon marks<cr>", opts)
+
+-- Tabline
+keymap("n", "H", "gT", opts)
+keymap("n", "L", "gt", opts)
+keymap("n", "(", "<cmd>lua require('user.tabline.utils').tabmove_prev()<cr>", opts)
+keymap("n", ")", "<cmd>lua require('user.tabline.utils').tabmove_next()<cr>", opts)

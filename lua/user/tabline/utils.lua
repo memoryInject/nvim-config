@@ -336,4 +336,42 @@ M.get_range_maxlen = function()
   return M.re_paginate(tabnames, #tabnames, current_tab_idx, win_width, tab_width, M.max_len)
 end
 
+M.tabmove_next = function()
+  local tablist_full = M.get_tab_list_full()
+  local total_tabs = #vim.api.nvim_list_tabpages()
+  local current_tab_idx = nil
+  for _, v in ipairs(tablist_full) do
+    if v.current == true then
+      current_tab_idx = v.tabidx
+      break
+    end
+  end
+  if current_tab_idx == total_tabs then
+    vim.cmd.tabmove()
+    vim.cmd.tabmove(0)
+  else
+    vim.cmd.tabmove()
+    vim.cmd.tabmove(current_tab_idx)
+  end
+end
+
+M.tabmove_prev = function()
+  local tablist_full = M.get_tab_list_full()
+  local total_tabs = #vim.api.nvim_list_tabpages()
+  local current_tab_idx = nil
+  for _, v in ipairs(tablist_full) do
+    if v.current == true then
+      current_tab_idx = v.tabidx
+      break
+    end
+  end
+  if current_tab_idx == 1 then
+    vim.cmd.tabmove()
+    vim.cmd.tabmove(total_tabs - 1)
+  else
+    vim.cmd.tabmove()
+    vim.cmd.tabmove(current_tab_idx - 2)
+  end
+end
+
 return M
