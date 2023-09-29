@@ -43,34 +43,38 @@ M.setup = function()
     border = "rounded",
   })
 -- https://github.com/samhh/dotfiles/blob/f45359a55feb3df5c8d00dc0ed04dc56622bb868/home/.config/nvim/plugin/plugins.vim#L125
-  -- vim.lsp.handlers["textDocument/definition"] = function (_, result, params)
-  --   if result == nil or vim.tbl_isempty(result) then
-  --     local _ = vim.lsp.log.info() and vim.lsp.log.info(params.method, "No location found")
-  --     return nil
-  --   end
-  --
-  --   if vim.tbl_islist(result) then
-  --     vim.lsp.util.jump_to_location(result[1], 'utf-8')
-  --     if #result > 1 then
-  --       local isReactDTs = false
-  --
-  --       for _, res in pairs(result) do
-  --         if string.match(res.uri, "react/index.d.ts") then
-  --           isReactDTs = true
-  --           break
-  --         end
-  --       end
-  --
-  --       if not isReactDTs then
-  --         vim.lsp.util.set_qflist(vim.lsp.util.locations_to_items(result, 'utf-8'))
-  --         vim.api.nvim_command("copen")
-  --         vim.api.nvim_command("wincmd p")
-  --       end
-  --     end
-  --   else
-  --     vim.lsp.util.jump_to_location(result, 'utf-8')
-  --   end
-  -- end
+  vim.lsp.handlers["textDocument/definition"] = function (_, result, params)
+    if result == nil or vim.tbl_isempty(result) then
+      -- local _ = vim.lsp.log.info() and vim.lsp.log.info(params.method, "No location found")
+      return nil
+    end
+
+    if vim.tbl_islist(result) then
+      vim.lsp.util.jump_to_location(result[1], 'utf-8')
+      if #result > 1 then
+        local isReactDTs = false
+        -- P('START')
+        -- P(result)
+        -- P('END')
+
+        for _, res in pairs(result) do
+          if string.match(res.targetUri, "react/index.d.ts") then
+            isReactDTs = true
+            break
+          end
+        end
+
+        if not isReactDTs then
+          -- P(vim.lsp.util)
+          -- vim.fn.setqflist(vim.lsp.util.locations_to_items(result, 'utf-8'))
+          -- vim.api.nvim_command("copen")
+          -- vim.api.nvim_command("wincmd p")
+        end
+      end
+    else
+      vim.lsp.util.jump_to_location(result, 'utf-8')
+    end
+  end
 end
 
 local function lsp_highlight_document(client)
