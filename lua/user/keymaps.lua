@@ -93,6 +93,14 @@ keymap(
   opts
 ) -- tele_tabby, Telescope tab switcher extension
 
+-- Show buffers
+keymap(
+  "n",
+  "<leader>b",
+  ":lua require('user.telebuff').buffer()<cr>",
+  opts
+)
+
 -- Nvimtree
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 

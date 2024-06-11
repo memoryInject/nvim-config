@@ -71,6 +71,13 @@ if mason_settings then
   end
 end
 
+-- check if the buffer modified
+M.is_buf_modified = function()
+  local buf = vim.api.nvim_get_current_buf()
+  local buf_modified = vim.api.nvim_buf_get_option(buf, "modified")
+  return buf_modified
+end
+
 -- simulate user keypress
 -- https://www.youtube.com/watch?v=MVW5zrQeNL0
 local function feedkeys(key, mode)

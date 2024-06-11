@@ -1,6 +1,25 @@
+local utils = require("user.utils")
 local status_ok, lualine = pcall(require, "lualine")
 if not status_ok then
   return
+end
+
+-- get filename with last dir eg: bar/foo.baz
+local function get_file_name()
+  local t = {}
+  local full_file_path = vim.fn.expand("%")
+  for str in string.gmatch(full_file_path, "([^" .. "/" .. "]+)") do
+    table.insert(t, str)
+  end
+  local buf_modified = ""
+  if utils.is_buf_modified() then
+    buf_modified = "*"
+  end
+  if not t[#t - 1] then
+    -- the file is at the root
+    return t[#t] .. buf_modified
+  end
+  return t[#t - 1] .. "/" .. t[#t] .. buf_modified
 end
 
 lualine.setup({
@@ -36,7 +55,8 @@ lualine.setup({
   sections = {
     lualine_a = { "mode" },
     lualine_b = { "branch", "diff", "diagnostics" },
-    lualine_c = { "filename" },
+    -- lualine_c = { "filename" },
+    lualine_c = { { get_file_name } },
     lualine_x = { "encoding", "fileformat", "filetype" },
     lualine_y = { "progress" },
     lualine_z = { "location" },

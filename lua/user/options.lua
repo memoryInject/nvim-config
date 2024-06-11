@@ -35,6 +35,7 @@ vim.opt.sidescrolloff = 8
 vim.opt.guifont = "monospace:h17"               -- the font used in graphical neovim applications
 vim.opt.cc = "80"                               -- set an 80 column border for good coding style
 vim.opt.belloff = "all"                         -- stop all the sounds
+vim.opt.showtabline = 1                         -- hide tabline
 
 vim.opt.shortmess:append("c")
 
