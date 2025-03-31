@@ -30,7 +30,7 @@ function M.config()
       -- formatting.eslint,
       -- diagnostics.flake8,
       -- diagnostics.eslint,
-      null_ls.builtins.completion.spell,
+      -- null_ls.builtins.completion.spell,
     },
   }
 end
