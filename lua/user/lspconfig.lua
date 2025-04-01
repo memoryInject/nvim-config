@@ -159,11 +159,20 @@ function M.config()
 		end
 
 		if server == "lua_ls" then
-			require("neodev").setup({})
+			require("neodev").setup()
 		end
 
 		if server == "elixirls" then
 			opts.cmd = { "elixir-ls" }
+			opts.root_dir = require("lspconfig.util").root_pattern("mix.exs", ".git")
+			opts.settings = {
+				elixirLS = {
+					dialyzerEnabled = true,
+					fetchDeps = false,
+					enableTestLenses = false,
+					suggestSpecs = false,
+				},
+			}
 		end
 
 		lspconfig[server].setup(opts)
