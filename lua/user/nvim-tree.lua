@@ -93,6 +93,8 @@ function M.config()
 			relativenumber = false,
 		},
 	})
+
+	vim.api.nvim_set_hl(0, "NvimTreeFolderIcon", { fg = "#60D0FF" })
 end
 
 return M
