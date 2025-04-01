@@ -11,7 +11,6 @@ spec("user.schemastore")
 spec("user.lspconfig")
 spec("user.cmp")
 spec("user.none-ls")
--- spec "user.whichkey"
 spec("user.nvim-tree")
 spec("user.lualine")
 spec("user.telescope")
