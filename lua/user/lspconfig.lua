@@ -47,7 +47,7 @@ M.on_attach = function(client, bufnr)
 	lsp_keymaps(bufnr)
 	lsp_highlight_document(client)
 
-	if client.supports_method("textDocument/inlayHint") then
+	if client:supports_method("textDocument/inlayHint") then
 		vim.lsp.inlay_hint.enable(false, { bufnr })
 	end
 end
@@ -99,9 +99,9 @@ function M.config()
 		vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = sign.name })
 	end
 
-	vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
+	vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { title = 'hoooooe', border = "rounded", winblend = 20 })
 	vim.lsp.handlers["textDocument/signatureHelp"] =
-		vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
+		vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded", winblend = 20, title = 'sfsdfsdfsd' })
 
 	-- https://github.com/memoryInject/nvim-config/blob/0e5716aa801a7667b4ab219423defd9e00c9d512/lua/user/lsp/handlers.lua#L45C1-L46C1
 	vim.lsp.handlers["textDocument/definition"] = function(_, result)

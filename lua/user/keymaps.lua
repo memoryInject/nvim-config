@@ -137,3 +137,6 @@ keymap("n", "H", "gT", opts)
 keymap("n", "L", "gt", opts)
 keymap("n", "(", "<cmd>lua require('user.tabline.utils').tabmove_prev()<cr>", opts)
 keymap("n", ")", "<cmd>lua require('user.tabline.utils').tabmove_next()<cr>", opts)
+
+-- Alpha
+keymap("n", "<leader>o", "<cmd>Alpha<cr>", opts)

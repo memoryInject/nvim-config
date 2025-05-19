@@ -27,20 +27,40 @@ M.is_directory = function(path)
 end
 
 M.console = {
-  log = function(msg)
-    vim.notify(msg .. " -- message from: " .. vim.fn.expand("%:p"))
+  log = function(msg, opts)
+    opts = opts or {}
+    local final_msg = msg
+    if opts.source then
+      final_msg = msg .. " -- message from: " .. vim.fn.expand("%:p")
+    end
+    vim.notify(final_msg)
   end,
 
-  warn = function(msg)
-    vim.notify(msg .. " -- message from: " .. vim.fn.expand("%:p"), vim.log.levels.WARN)
+  warn = function(msg, opts)
+    opts = opts or {}
+    local final_msg = msg
+    if opts.source then
+      final_msg = msg .. " -- message from: " .. vim.fn.expand("%:p")
+    end
+    vim.notify(final_msg, vim.log.levels.WARN)
   end,
 
-  error = function(msg)
-    vim.notify(msg .. " -- message from: " .. vim.fn.expand("%:p"), vim.log.levels.ERROR)
+  error = function(msg, opts)
+    opts = opts or {}
+    local final_msg = msg
+    if opts.source then
+      final_msg = msg .. " -- message from: " .. vim.fn.expand("%:p")
+    end
+    vim.notify(final_msg, vim.log.levels.ERROR)
   end,
 
-  info = function(msg)
-    vim.notify(msg .. " -- message from: " .. vim.fn.expand("%:p"), vim.log.levels.INFO)
+  info = function(msg, opts)
+    opts = opts or {}
+    local final_msg = msg
+    if opts.source then
+      final_msg = msg .. " -- message from: " .. vim.fn.expand("%:p")
+    end
+    vim.notify(final_msg, vim.log.levels.INFO)
   end,
 }
 

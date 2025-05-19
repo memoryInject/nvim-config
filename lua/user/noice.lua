@@ -7,7 +7,7 @@ local M = {
 	dependencies = {
 		-- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
 		"MunifTanjim/nui.nvim",
-		"rcarriga/nvim-notify",
+		-- "rcarriga/nvim-notify",
 		--   `nvim-notify` is only needed, if you want to use the notification view.
 		--   `nvim-notify` is only needed, if you want to use the notification view.
 	},
@@ -16,6 +16,9 @@ local M = {
 M.config = function()
 	require("noice").setup({
 		lsp = {
+			progress = {
+				enabled = false,
+			},
 			-- override markdown rendering so that **cmp** and other plugins use **Treesitter**
 			override = {
 				["vim.lsp.util.convert_input_to_markdown_lines"] = true,
