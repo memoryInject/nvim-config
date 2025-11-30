@@ -125,7 +125,7 @@ M.config = function()
 	local alpha = require("alpha")
 	local dashboard = require("alpha.themes.dashboard")
 
-	dashboard.section.header.val = stripper
+	-- dashboard.section.header.val = stripper
 
 	dashboard.section.buttons.val = {
 		dashboard.button("f", "🔍 Find File", ":Telescope find_files <CR>"),
